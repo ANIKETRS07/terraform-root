@@ -1,3 +1,4 @@
+
 terraform {
   required_version = ">= 1.3.0"
 
@@ -8,13 +9,14 @@ terraform {
     }
   }
 
-   backend "s3" { 
-    bucket = "myproject-terraform-state"
-    key    = "terraform.tfstate"        
-    region = "ap-south-1"
-    dynamodb_table = "myproject-terraform-state-lock"
-    encrypt = true
-
+  backend "s3" {
+    bucket         = "aniket-terraform-state-2026"
+    key            = "terraform.tfstate"
+    region         = "ap-south-1"
+    dynamodb_table = "aniket-terraform-state-lock"
+    encrypt        = true
+  }
 }
 
-}
+
+
