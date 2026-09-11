@@ -20,7 +20,7 @@ locals {
 module "vpc" {
   source = "git::https://github.com/ANIKETRS07/vpc-module.git"
 
-  cidr_block = var.vpc_cidr
+  vpc_cidr_block = var.vpc_cidr
   vpc_name   = "${local.name_prefix}-vpc"
   tags       = local.common_tags
 }
@@ -31,7 +31,7 @@ module "subnets" {
 
   for_each          = var.subnets
   subnet_name       = "${local.name_prefix}-${each.key}"
-  cidr_block        = each.value.cidr
+  subnet_cidr_block = each.value.cidr
   availability_zone = each.value.az
   vpc_id            = module.vpc.vpc_id
   is_public         = each.value.is_public
