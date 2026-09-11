@@ -1,5 +1,5 @@
 environment = "dev"
-project_name = "my_project"
+project_name = "my-project"
 aws_region = "ap-south-1"
 vpc_cidr = "10.0.0.0/16"
 bucket_suffix = "myproject-dev"
